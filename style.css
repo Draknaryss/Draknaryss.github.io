@@ -398,6 +398,10 @@ nav ul li a:hover::after {
     }
 }
 
+.footervideo {
+    width: 100%;
+    
+}
 
 footer {
     margin-top: -50px;
