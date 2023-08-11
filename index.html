@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div id="hero">
+        <div class="header"></div>
+        <video controls class="backvideo" src="img/control.mp4"   autoplay muted loop>
+
+        </video>
+
+        <div class="nextvideo"><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO9JREFUSEu1ltENwjAQQ+1NYBOYBDoJZRLYhI7STYwsJShSmyZNyX2icu9sX08lOhc798cqQNILwAXAleR8ZIgcQKGpm79JPlshJUDsa1CTmhLgDOAD4ASgSc0mgCQlufkNwBjkTACG2myKgOiRpDuAx1411QCDVtSMpQXYBUjUWEm0zNnYMlu3qCZAoia+L/5pVU0zIGPZTNKb96tDgABJ7ZpIXv8CCIH3sUhSn5BXpvadGrbuVHUGknxdfTZcm6u5K4MwtS3xm+xaBNmswBc0mTq760cA3c9109Q1GcT9zt6YLVuKgNo/1zzX/aviCyWOnxkFdwrCAAAAAElFTkSuQmCC"/>
+        </div>
+        <div class="previousvideo"><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAP5JREFUSEu1lt0RgkAMhHc7sRSpRK1ErEQ7kVLsJM4yd048TwZyBy+8MPk2mz+InR/uHB/NADM7ALhLKMmhFNwEMLMrgDEHJfkTLwRwqo9ecRdAofoF4ALgmSyKZ1BR/SCp4DAzawKYmayYVQKYVZOcsj1hQFKtQp5TsKnWKSFAoVrxR5K32txsBlQKOZCUNdVnE8DM5HVuv7+qPSkKkGJ1StWWFoBG/+QmVKB+FrnWE0h26b2YzSaLitTLbNT7moGvgocBLhvNgeahmk0zIK2DMptPh3UBuGz8iu637Cq10ZHpv66LLvPtrIsWX9cLa2K/k7nmhyF0MtcEzt+8AYK6lxmyTtQQAAAAAElFTkSuQmCC"/>
+        </div>
+        <nav>
+            <a href="index.html" class="logo">#Unik <span>Digital Content</span>
+                <spans>.</spans>
+            </a>
+
+            <div class="social">
+                <a href="#"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAALxJREFUSEvtlMENgzAMRb836SiMUiYpnQQ2KZ2k3eRXX0qkHKgdqkTlgE8gIj/n2cbQOaxzfhwLQPIC4AZgAKDnN4DFzO7fTFTfICV/bSQSYGwBUOVTT8AjqRFjBTCamRS5sUeR9Mi7YvK8l8RfAap+iarXdxdAMk+Lzs5FQiV/pvfVUxUBlPQaVOrqagFwdUWAvFS6hBqcm6zpyRPkTtN/m1y6J1mOaZspOgHhop2Kdimq+bFtnaletMMCPs0IYBla69QxAAAAAElFTkSuQmCC" /></a>
+                <a href="#"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASdJREFUSEvlVcFxwzAMAzZpJmk7SZJJ2k7SZJJ0k2YT5NCjWtmiXOmRV3jnc2yThAiCDHFn453z40EBJL0AeAPwFBSfSH5I8vPevwv1C4okXQAcSV57vZF0APCZfHeMARx/6gEIgB1/TpSBSLJPzxz7BeBM0ve/Jkd531Xkezj+VrNx+hrwtSRfAPghKDK/xZzc1znupiCjp/i78mONtu6B+a2bNzsmfYCEotnk9l80eISiWZDdWoFrisyxpVr0PQVAstkMzYsYoj0A92PGGnoaikJJvUHaAruS3GUO6bKTZCV5DkZtof2uTOsPZa8MAKXUlFxZD0qDXcV/feievAGIE48qyHtmcymmFQSIV8VzSLWWa73Iutt23bQH/Ucb1W46aDPBI743YxhuGQJAz1AAAAAASUVORK5CYII=" /></a>
+                <a href="#"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANdJREFUSEvtVcENwjAMvNsENqGTQCeBTYBJ6CZ0E6OTahRKVAdIJB61VDWKnDv77DhEY2NjfKwEocIvEpnZBsAewA6A1jL/58DGZFNrfVeSg+8/CcxMoLcwpNhBJL2TpARnAIf4fJHHQLKTZ0pwD+QoQp6cRpLbTwkUkbJcqokHkSWwpRBJMmmCU5SO/OcZhAQOWkL0vwRmdgTwlURRF/1cZF0yXbYalr0HNQkuJPt5F6m/JVMN695GhVCn9lMRRVYy7HQsHXgacvlhVyPsHMb6ooXKNpfoAd/VWhmPSaTBAAAAAElFTkSuQmCC" /></a>
+                <a href="#"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAYdJREFUSEvFVcFNA0EMnGmCb5JKIB/+FIAglZCIQriUwQuohMCHdyowmpV35extjo1QlJPyiM72jMdjH3Hmh2euj8sAmNkcwAOAG/8da3TnL94BbEjm/yV+1IGZPQJ48QglKHnqERkRUexAchODDwCc+aeKklz2zsfz3jx+RbKQqgHEXB0sWu3WgGZ2L2kA7AHcARiRqwEUsGuxd+lmACTJB8nBzG4BvAL4Jjkzs9RFzK8BzHVcZbbevjqTzvGR5s8AfgBckdw6wJzkIgf2AIiViq81wOCwtXdbiplZkphkqTsJEByVikf64d0yD7UXoBTLCa2hB8eN4v/qICY8SZpjrjIzzexfANJeM2hJlMHl+0Hy9UqkbUwuCg6SNdOWVkM+WMiTASqQlk014HJ/egBGixJABHDtN+cry1I5a7SorVOhQgfMem5ScFWROG11xUBaJxangFTbXvZiBOBy5HMdb33PuVZMcVTzVFT3RzbMt34KIH8ztvFMTwL0aN4bc5lvci+7nrhfbk/7GSVjCTQAAAAASUVORK5CYII=" /></a>
+            </div>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Series</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <a href="login.html"><button class="btn-login">Login</button></a>
+                <!-- <img class="reorder-btn" src="img/reorder.svg" alt=""> -->
+            </ul>
+        </nav>
+
+    </div>
+
+    <div class="section1">
+        <h2><span>Control</span> - Défiez les lois de la gravité</h2>
+
+        <div class="buttons">
+            <a href="#section3"><button class="button-size">Critique</button></a>
+            <button class="button-size">Soluce</button>
+            <button class="button-size">Trophées</button>
+        </div>
+    </div>
+
+    <section id="section3">
+        <div class="container">
+            <p>Défiez les lois de la gravité et du réel dans le dernier bébé du studio finlandais <span>Remedy</span> à
+                l’origine de
+                <span>Max Payne</span> ou encore de <span>Quantum Break</span>. Le jeu est édité par <span>505
+                    Games</span> et est disponible sur un bon nombre
+                de plateformes depuis 2019 (PC, Xbox one, PS4/PS5 et dernièrement sur Switch). Une ultimate version est
+                disponible avec à l’intérieur les deux derniers DLC (<span>The Foundation</span> et <span>Awe</span>)
+                histoire de prolonger la
+                durée de vie du jeu qui est déjà conséquente, compter une dizaine d’heures en prenant votre temps pour
+                l’histoire principale. Récompensé par plus de 80 prix, <span>Control</span> est un jeu d’action aventure
+                à la
+                troisième personne qui vous tiendra en haleine avec son gameplay à la fois classique mais original et
+                son univers surnaturel.
+            </p><br>
+            <h2>La nouvelle directrice</h2>
+            <img src="img/control01.jpeg" alt="">
+            <p>Vous incarnez la jeune Jesse Faden, à la recherche de son frère Dylan qui a disparu dans des
+                circonstances inquiétantes et obscures. Votre enquête débute au bureau d’une ancienne agence secrète du
+                gouvernement américain, la Federal Bureau of Control (FBC) qui est en charge d’étudier les phénomènes
+                paranormaux via des objets de pouvoirs plus étranges les uns que les autres. Jesse les découvrira au fil
+                de son aventure au sein du bureau fédéral, chaque objet de pouvoir lui apportant son nouveau lot de
+                compétence.
+
+                Très tôt dans la partie vous découvrez l’arme à feu du directeur qui vous propulse au rang de directrice
+                du FBC. Vous apprenez ensuite que le bâtiment a été isolé par le « Comité » en découvrant les cadavres
+                des employés en lévitation et en vous frottant à vos premiers ennemis. Les scientifiques et les employés
+                ont été contaminés par ce que surnomme Jesse le Hiss. Le personnage de la jeune femme est vraiment
+                attachant et réaliste. Le doublage français et les dialogues sont agréables même si on regrettera le
+                doublage décalé de l’image et de la voix gâchant un peu l’immersion du jeu. </p>
+            <h2>Un gameplay unique</h2>
+            <img src="img/control2.jpg" alt="">
+            <p>Le gameplay… comment le décrire ? Je ne pense pas avoir les mots, il faut y jouer pour se rendre compte
+                de la profondeur et de la richesse du gameplay de Control avec ses mécaniques qui le rendent unique.
+                Certes on retrouve les standards du FPS mais qu’est-ce que c’est jouissif de voir son personnage évoluer
+                au fur et à mesure de l’aventure avec le déblocage de nouveaux pouvoirs (qui ont tous leur utilité dans
+                le jeu et qui permettent d’enrichir à chaque fois le gameplay, d’adopter de nouvelles stratégies face
+                aux vagues de monstres, de débloquer de nouvelles zones jusque là inaccessible). Le joueur n’est pas
+                submergé par une multitude de nouveaux pouvoirs mais le gameplay du jeu évolue au bon rythme sans noyer
+                le joueur d’informations inutiles ou de mécaniques totalement useless comme dans certains jeux dont je
+                ne citerai pas les noms.</p>
+
+            <p>Les armes débloquées ont aussi leur originalité et sont uniques à leur façon… je vous laisse découvrir
+                par vous même. Concernant les pouvoirs je ne les listerai pas tous afin de ne pas spoiler tout le jeu
+                mais pour n’en citer quelques uns dont j’ai eu un malin plaisir à en abuser, ce serait la lévitation et
+                la télékinésie.</p>
+
+            <p>En terme de visée et de tir le jeu est agréable et nerveux, le bestiaire est assez varié même si j’aurai
+                aimé un peu plus de diversité. Vous aurez également quelques boss à affronter, personnellement j’aurai
+                souhaité en combattre quelques uns supplémentaire ce qui aurait rajouté un peu de difficulté au jeu
+                puisque malheureusement nous n’avons pas le choix sur un mode normal ou extrême pour ceux qui aiment
+                relever des challenges ou pour les acharnés de la gâchette. Les déplacements et la fluidité du jeu est
+                exceptionnel. Il est par exemple possible de combiner plusieurs pouvoirs en même temps comme léviter
+                tout en utilisant la télékinésie ou le tir (cf image du dessus qui est une bonne illustration). La durée
+                de vie est plus que correcte, compter une dizaine d’heures pour la trame principale en prenant votre
+                temps pour explorer. Les deux DLC ainsi que les missions secondaires sont un plus non négligeable.</p>
+
+            <p>Enfin l’interface est simpliste et minimaliste et reste très lisible et compréhensible. L’évolution de
+                la puissance de Jesse repose sur un arbre de talents où l’on dépense des points de compétences comme
+                dans la plupart des jeux, et les armes sont améliorées grâce à un système de loots plus ou moins rares
+                que vous débloquerez dans des caches secrètes ou sur certains ennemis. Les zones sont relativement
+                vastes même si bien entendu il ne s’agit pas d’un monde ouvert et il est possible de se téléporter de
+                zone en zone. Un système de badges et d’accréditations fait partie du jeu pce qui permet au joueur de
+                découvrir de nouvelle zones et d’accéder à des pièces secrètes.</p>
+
+            <h2>Unique... le mot de la fin</h2>
+            <img id="testsubstitute" src="img/control3.jpg" alt="">
+
+            <p>Control reste pour moi comme l’indique ce dernier titre un jeu unique en son genre avec une trame
+                mystérieuse et une conception de level design remarquable. Pour l’avoir testé et découvert sur pc avec
+                le ray tracing compatible, le jeu est beau et les décors défient les lois de la gravité et le moindre
+                détail est maitrisé et attire la curiosité du joueur qui redemande à en voir davantage au fur et à
+                mesure de son exploration. Le personnage de Jesse est attachant et le gameplay est novateur sur bien des
+                aspects. La progression n’est pas linéaire avec le déblocage de nouveaux pouvoirs ce qui dynamise le
+                gameplay du joueur. Bref, une aventure unique et mystérieuse où l’on se retrouve happé par cet univers
+                digne des plus grands épisodes de x-files… une suite est déjà en préparation !</p>
+
+            <p>Control est plus que recommandable, foncez vous ne serez pas déçu si vous aimez l’action et dégommez des
+                ennemis en utilisant le décor et même le cadavre de vos ennemis si l’envie vous prend ! Oui, oui c’est
+                possible dans le jeu 🙂</p>
+
+            <p>Comment ne pas finir cet article avec les douces notes de la musique du meilleur passage du jeu sans
+                aucun doute : Take Control du groupe Old Gods of Asgard ! Pas si douces que ça en fin de compte mais
+                plutôt rock&roll ! En un mot pour conclure… Epique !</p>
+
+            <br><br>
+
+            <div class="notation-container">
+
+                <div class="pourcentage">
+                   
+
+                </div>
+                <h3 class="quotenotation">Control un jeu marquant que l'on oublie pas</h3>
+                <p class="scorefinal">90 / 100</p>
+            </div>
+
+            <div class="profile-banner">
+
+            </div>
+
+            <div class="right-profile">
+                <h3>Draknaryss</h3><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum possimus facere optio, sit unde
+                    nostrum blanditiis alias quod officiis atque impedit pariatur voluptas, repellendus doloremque. Modi
+                    iusto vero aut blanditiis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, quam
+                    dolorum magnam ducimus delectus error vel nobis rem maiores hic officia sit laboriosam. Temporibus
+                    minima dolores, possimus odit ipsa soluta. </p>
+            </div>
+
+            <div class="comments">
+                <h3>Laissez un commentaire</h3>
+                <form action="#">
+                    <textarea name="comments" id="comment"></textarea>
+                    <button class="submit-comment">Validez</button>
+                </form>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <video class="footervideo" autoplay muted loop>
+
+        <source src="img/footer2.mp4" type="video/mp4">
+    </video>
+
+    <a href="#hero"><i class='bx bxs-chevrons-up'></i></a>
+    </div>
+
+
+    <footer>
+        <p>Copyright Tous droits réservés @2023 Unik Digital Content</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
